@@ -12,4 +12,9 @@ int getCost(int cardNumber);
 int cardEffect(int card, int choice1, int choice2, int choice3, 
 	       struct gameState *state, int handPos, int *bonus);
 
+int aventurerFun(int currentPlayer, struct gameState *state);
+int smithyFun(int currentPlayer, struct gameState* state, int handPos);
+int stewardFun(int currentPlayer, struct gameState* state, int choice1, int choice2, int choice3 , int handPos);
+int cutpurseFun(int currentPlayer, struct gameState* state, int handPos);
+int treasureMapFun(int currentPlayer, struct gameState* state, int handPos);
 #endif
