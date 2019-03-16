@@ -1,0 +1,151 @@
+Breakpoint 1 at 0x4038e4: file dominion.c, line 754.
+Starting program: /nfs/stak/users/mingusj/CS362/ass5/cardtest2 
+
+Breakpoint 1, cardEffect (card=7, choice1=0, choice2=0, choice3=0, state=0x7fffffff79b0, handPos=0, bonus=0x0) at dominion.c:754
+754	  int currentPlayer = whoseTurn(state);
+755	  int nextPlayer = currentPlayer + 1;
+757	  int tributeRevealedCards[2] = {-1, -1};
+759	  int drawntreasure=0;
+762	  if (nextPlayer > (state->numPlayers - 1)){
+768	  switch( card ) 
+771	        ref_adventurer(state, handPos, bonus, drawntreasure);
+ref_adventurer (state=0x7fffffff79b0, handPos=0, bonus=0x0, drawntreasure=0) at dominion.c:648
+648	    int currentPlayer = whoseTurn(state);
+651	    int z = 0;// this is the counter for the temp hand
+653	    while(drawntreasure<2){
+654		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+657		drawCard(currentPlayer, state);
+658		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+659		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) {
+660		  drawntreasure++;
+661	      z++;
+653	    while(drawntreasure<2){
+654		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+657		drawCard(currentPlayer, state);
+658		cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+659		if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold) {
+660		  drawntreasure++;
+661	      z++;
+653	    while(drawntreasure<2){
+669	      while(z-1>=0){
+670		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+671		z=z-1;
+669	      while(z-1>=0){
+670		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+671		z=z-1;
+669	      while(z-1>=0){
+673	      return 0;
+674	}
+cardEffect (card=7, choice1=0, choice2=0, choice3=0, state=0x7fffffff79b0, handPos=0, bonus=0x0) at dominion.c:794
+794	        ref_councilroom(state, handPos, bonus);
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+823		temphand[i] = state->hand[currentPlayer][i];//Backup card
+824		state->hand[currentPlayer][i] = -1;//Set to nothing
+822	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+829	      updateCoins(currentPlayer, state, 5);
+830	      x = 1;//Condition to loop on
+831	      while( x == 1) {//Buy one card
+832		if (supplyCount(choice1, state) <= 0){
+840		else if (state->coins < getCost(choice1)){
+853		  gainCard(choice1, state, 0, currentPlayer);//Gain the card
+854		  x = 0;//No more buying cards
+831	      while( x == 1) {//Buy one card
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+865		state->hand[currentPlayer][i] = temphand[i];
+866		temphand[i] = -1;
+864	      for (i = 0; i <= state->handCount[currentPlayer]; i++){
+870	      return 0;
+1332	}
+main () at cardtest2.c:55
+55		printf("%d", G.deckCount[curPlayer]);
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+61				tresurerCountEnd++;
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+61				tresurerCountEnd++;
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+61				tresurerCountEnd++;
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+61				tresurerCountEnd++;
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+61				tresurerCountEnd++;
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+61				tresurerCountEnd++;
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+59			if(G.hand[G.whoseTurn][i] == copper || G.hand[G.whoseTurn][i] == silver || G.hand[G.whoseTurn][i] == gold)
+61				tresurerCountEnd++;
+57		for(i=0; i<G.handCount[curPlayer]; i++)
+A debugging session is active.
+
+	Inferior 1 [process 9831] will be killed.
+
+Quit anyway? (y or n) 
